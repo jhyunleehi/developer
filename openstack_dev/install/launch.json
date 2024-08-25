@@ -1,0 +1,118 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: bin/openstack",
+            "type": "debugpy",
+            "request": "launch",
+            //"program": "/usr/local/bin/openstack",
+            "program": "/opt/stack/data/venv/bin/openstack",           
+            "args": [
+                "server list"
+            ],
+            "console": "integratedTerminal",
+            "env": {
+                "OS_PROJECT_NAME": "demo",
+                "OS_TENANT_NAME": "demo",
+                "OS_USERNAME": "demo",
+                "OS_PASSWORD": "secret",
+                "OS_REGION_NAME": "RegionOne",
+                "OS_IDENTITY_API_VERSION": "3",
+                "OS_AUTH_TYPE": "password",
+                "OS_AUTH_URL": "http://127.0.0.1/identity",
+                "OS_VOLUME_API_VERSION": "3",
+                "OS_USER_DOMAIN_ID": "default",
+                "OS_PROJECT_DOMAIN_ID": "default",
+                "CINDER_VERSION": "3"
+            },
+            "justMyCode": false,
+            "gevent": true,
+            "redirectOutput": true
+        },
+        {
+            "name": "Python: openfile",
+            "type": "debugpy",
+            "request": "launch",
+            //"program": "/usr/bin/openstack",
+            //"program": "/opt/stack/data/venv/bin/openstack",           
+            "program": "${file}",
+            "args": [
+                //"volume list"
+                //"service-list"
+            ],
+            "console": "integratedTerminal",
+            "preLaunchTask": "SetOpenStackEnvironment",
+            "env": {
+                "OS_PROJECT_NAME": "admin",
+                "OS_TENANT_NAME": "admin",
+                "OS_USERNAME": "admin",
+                //"OS_PROJECT_NAME": "demo",
+                //"OS_TENANT_NAME": "demo",
+                //"OS_USERNAME": "demo",
+                "OS_PASSWORD": "secret",
+                "OS_REGION_NAME": "RegionOne",
+                "OS_IDENTITY_API_VERSION": "3",
+                "OS_AUTH_TYPE": "password",
+                "OS_AUTH_URL": "http://127.0.0.1/identity",
+                //"OS_AUTH_URL": "http://70.60.31.54/identity",
+                "OS_VOLUME_API_VERSION": "3",
+                "OS_USER_DOMAIN_ID": "default",
+                "OS_PROJECT_DOMAIN_ID": "default",
+                "CINDER_VERSION": "3",
+                "OS_CACERT": "",
+                "VIRTUALENV_CMD": "python3 -m venv",
+                "USE_PYTHON3": "True",
+                "PYTHON3_VERSION": "3.10"
+            },
+            "justMyCode": false,
+            "gevent": true,
+            "redirectOutput": true
+        },
+        {
+            "name": "Python: debug",
+            "type": "debugpy",
+            //"type": "python",
+            "request": "launch",
+            //"program": "/usr/local/bin/openstack",              
+            //"program": "/opt/stack/data/venv/bin/manila-share",
+            "program": "share.py",
+            //"program": "${file}",
+            "args": [               
+                "--config-file",
+                "/etc/manila/manila.conf"
+            ],
+            "console": "integratedTerminal",
+            "preLaunchTask": "SetOpenStackEnvironment",
+            "env": {
+                "OS_PROJECT_NAME": "admin",
+                "OS_TENANT_NAME": "admin",
+                "OS_USERNAME": "admin",
+                //"OS_PROJECT_NAME": "demo",
+                //"OS_TENANT_NAME": "demo",
+                //"OS_USERNAME": "demo",
+                "OS_PASSWORD": "secret",
+                "OS_REGION_NAME": "RegionOne",
+                "OS_IDENTITY_API_VERSION": "3",
+                "OS_AUTH_TYPE": "password",
+                "OS_AUTH_URL": "http://127.0.0.1/identity",
+                //"OS_AUTH_URL": "http://70.60.31.54/identity",
+                "OS_VOLUME_API_VERSION": "3",
+                "OS_USER_DOMAIN_ID": "default",
+                "OS_PROJECT_DOMAIN_ID": "default",
+                "CINDER_VERSION": "3",
+                "OS_CACERT": "",
+                "VIRTUALENV_CMD": "python3 -m venv",
+                "USE_PYTHON3": "True",
+                "PYTHON3_VERSION": "3.10"
+            },
+            "cwd":"${workspaceFolder}",
+            "justMyCode": true,
+            "gevent": true,
+            "redirectOutput": true,
+            "pythonPath":"${workspaceFolder}/.venv/bin/python3"
+        }
+    ]
+}
