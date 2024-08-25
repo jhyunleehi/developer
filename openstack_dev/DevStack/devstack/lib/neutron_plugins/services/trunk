@@ -1,5 +1,0 @@
-#!/bin/bash
-
-function configure_trunk_extension {
-    neutron_service_plugin_class_add "trunk"
-}

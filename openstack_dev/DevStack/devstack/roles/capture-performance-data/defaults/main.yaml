@@ -1,3 +1,0 @@
-devstack_base_dir: /opt/stack
-devstack_conf_dir: "{{ devstack_base_dir }}"
-stage_dir: "{{ ansible_user_dir }}"
