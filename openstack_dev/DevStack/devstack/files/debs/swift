@@ -1,7 +1,0 @@
-curl
-liberasurecode-dev
-make
-memcached
-rsync
-sqlite3
-xfsprogs
